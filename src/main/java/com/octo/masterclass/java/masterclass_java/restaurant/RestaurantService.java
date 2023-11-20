@@ -2,8 +2,6 @@ package com.octo.masterclass.java.masterclass_java.restaurant;
 
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class RestaurantService {
 
@@ -14,7 +12,7 @@ public class RestaurantService {
                 .orElse(0.0);
     }
 
-    public Formule creerMenu(List<Plat> plats, String nom) {
-        return new Formule();
-    }
+    /*public Panier creerMenu(List<Plat> plats){
+        return new Panier();
+    }*/
 }

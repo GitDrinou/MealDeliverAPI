@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController()
-@RequestMapping("/Formule")
+@RequestMapping("/formules")
 public class FormuleController {
 
     final RestaurantService service;
@@ -20,7 +20,7 @@ public class FormuleController {
                     new Ingredient("Parmigiano Reggiano", false, 0)
             ), true),
             new Plat("Risotto al Sapore di Mare",14.80, List.of()),
-            new Dessert("Tiramisu", 4.90, List.of(), false)
+            new Dessert("Tiramisu", 4.90, List.of())
     ));
 
     Formule pizza = new Formule("Pizza", List.of(
