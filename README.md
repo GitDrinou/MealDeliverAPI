@@ -38,7 +38,7 @@ Votre travail sera évalué sur les points suivants :
 
 # Fonctionnalités à développer
 C'est à vous de choisir quelles fonctionnalités vous allez développer. Plus en ferez mieux c'est. Plus elles sont cohérentes et pertinentes, mieux c'est.
-Les fonctionnalités sont présentées sous la forme de phrases simples. Elles peuvent être très claires ou porter à confusion. Libre à vous de préciser le besoin ou de faire valider votre compréhension du besoin auprès du client. Vous pouvez proposer des alternatives ou des version dégradées des fonctionnalités.
+Les fonctionnalités sont présentées sous la forme de phrases simples. Elles peuvent être très claires ou porter à confusion. Libre à vous de préciser le besoin ou de faire valider votre compréhension du besoin auprès du client. Vous pouvez proposer des alternatives ou des versions dégradées des fonctionnalités.
 
 ### En tant qu'utilisateur :
 je peux voir les plats à emporter du restaurant

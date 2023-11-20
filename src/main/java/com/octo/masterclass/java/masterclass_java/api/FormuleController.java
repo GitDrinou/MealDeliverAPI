@@ -1,9 +1,6 @@
 package com.octo.masterclass.java.masterclass_java.api;
 
-import com.octo.masterclass.java.masterclass_java.restaurant.Formule;
-import com.octo.masterclass.java.masterclass_java.restaurant.Ingredient;
-import com.octo.masterclass.java.masterclass_java.restaurant.Plat;
-import com.octo.masterclass.java.masterclass_java.restaurant.RestaurantService;
+import com.octo.masterclass.java.masterclass_java.restaurant.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,28 +13,33 @@ public class FormuleController {
 
     final RestaurantService service;
 
-    Formule mezzogiorno = new Formule("Mezzogiorno", List.of(
-            new Plat("Bruschetta Di Pomodora", 6.90, List.of(
+    Formule midi = new Formule("Midi", List.of(
+            new Entree("Bruschetta Di Pomodora", 6.90, List.of(
                     new Ingredient("Tartare de tomate", false, 0),
                     new Ingredient("Echalotes", false, 1),
                     new Ingredient("Parmigiano Reggiano", false, 0)
-            )),
-            new Plat("Risotto al Sapore di Mare",14.80, List.of())
+            ), true),
+            new Plat("Risotto al Sapore di Mare",14.80, List.of()),
+            new Dessert("Tiramisu", 4.90, List.of(), false)
     ));
-    Formule pizza = new Formule("Pizza", List.of());
 
-    List<Formule> carte = List.of(mezzogiorno, pizza);
+    Formule pizza = new Formule("Pizza", List.of(
+            new Plat("Margherita", 8.00, List.of()),
+            new Plat("Insalata di frutti", 4.60, List.of())
+    ));
+
+    List<Formule> formules = List.of(midi, pizza);
 
     public FormuleController(RestaurantService service){this.service = service; }
 
     @GetMapping
     List<Formule> getFormules(){
-        return carte;
+        return formules;
     }
 
     @GetMapping("/prix")
-    Double getPrixMezzo() {
-        return service.calculerPrixFormule(mezzogiorno);
+    Double getPrixFormuleMidi() {
+        return service.calculerPrixFormule(midi);
     }
 }
 
