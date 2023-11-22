@@ -45,17 +45,21 @@ public class MasterclassJavaApplication implements CommandLineRunner {
 		Ingredient pomme = new Ingredient("Pomme", false, 0);
 		Ingredient framboise = new Ingredient("Framboise", false, 0);
 
+		List<Ingredient> tousMesIngredients = List.of(tomate, echalote, parmesan,riz, champignon, farine, mozzarella, sauceTomate, basilic, banane, orange, pomme, framboise);
+
 		Plat bruschetta = new Plat("bruschetta", 5.90, 5, List.of(tomate,echalote,parmesan));
 		Plat risotto = new Plat("Risotto al Funghi",14.80, 45, List.of(riz, champignon));
 		Plat pizzaMarguerita = new Plat("Margherita", 8.00, 10, List.of(farine, sauceTomate, mozzarella, basilic, huileOlive));
 		Plat insalataFrutti = new Plat("Insalata di frutti", 4.60, 5, List.of(banane, orange, pomme, framboise));
 
+		List<Plat> tousMesPlats = List.of(bruschetta, risotto, pizzaMarguerita, insalataFrutti);
+
 		Formule midi = new Formule("Midi", List.of(bruschetta, risotto));
 		Formule pizza = new Formule("Pizza", List.of(pizzaMarguerita, insalataFrutti));
 
 
-		ingredientRepository.saveAll(List.of(tomate,echalote,parmesan));
-		platRepository.save(bruschetta);
+		ingredientRepository.saveAll(tousMesIngredients);
+		platRepository.saveAll(tousMesPlats);
 		formuleRepository.saveAll(List.of(midi, pizza));
 	}
 }
