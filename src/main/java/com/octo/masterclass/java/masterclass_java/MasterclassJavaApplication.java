@@ -57,9 +57,11 @@ public class MasterclassJavaApplication implements CommandLineRunner {
 		Formule midi = new Formule("Midi", List.of(bruschetta, risotto));
 		Formule pizza = new Formule("Pizza", List.of(pizzaMarguerita, insalataFrutti));
 
+		List<Formule> toutesMesFormules = List.of(midi, pizza);
+
 
 		ingredientRepository.saveAll(tousMesIngredients);
 		platRepository.saveAll(tousMesPlats);
-		formuleRepository.saveAll(List.of(midi, pizza));
+		formuleRepository.saveAll(toutesMesFormules);
 	}
 }
