@@ -13,8 +13,4 @@ public class RestaurantService {
                 .reduce(Double::sum)
                 .orElse(0.0);
     }
-
-    /*public Panier creerMenu(List<Plat> plats){
-        return new Panier();
-    }*/
 }
